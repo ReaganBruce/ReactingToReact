@@ -4,14 +4,16 @@ import Greeter from "./components/Greeter";
 const App = () => {
   const [username, setUsername] = useState("");
   const [loaded, setLoaded] = useState(false); // setLoaded is globally set to false.
+  
+  const handleUsername = (e) =>{
+     setUsername(e.target.value);
+   }
 
+  
   const handleLoad = () => {
     setLoaded(true); //In the handleLoad() function, setLoaded() is redefined to true.
   };
 
- const handleUsername = (e) =>{
-    setUsername(e.target.value);
-  }
 
   useEffect(() =>{
       console.log(`Current State is ${loaded}`);
