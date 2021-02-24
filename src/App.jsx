@@ -9,6 +9,10 @@ const App = () => {
     setLoaded(true); //In the handleLoad() function, setLoaded() is redefined to true.
   };
 
+ const handleUsername = (e) =>{
+    setUsername(e.target.value);
+  }
+
   useEffect(() =>{
       console.log(`Current State is ${loaded}`);
       setTimeout(() => {
@@ -26,7 +30,7 @@ const App = () => {
         <input
           placeholder="Login Username"
           value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={e => handleUsername(e.target.value)}
         ></input>
         <p>You are logging in as: {username}</p>
       </div>
