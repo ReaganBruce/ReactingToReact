@@ -3,15 +3,18 @@ import Greeter from "./components/Greeter";
 
 const App = () => {
   const [username, setUsername] = useState("");
-  const [loaded, setLoaded] = useState(false); // setLoaded is globally set to false.
+  const [loaded, setLoaded] = useState(false);
+   // setLoaded is globally set to false.
   
   const handleLoad = () => {
     setLoaded(true); //In the handleLoad() function, setLoaded() is redefined to true.
   };
   
-    const handleUsername = (e) => {
-      setUsername(e);
-    };
+  const handleUsername = (e) => {
+    setUsername(e);
+  };
+
+ 
 
   useEffect(() => {
     console.log(`Current State is ${loaded}`);
@@ -23,25 +26,30 @@ const App = () => {
   //IF TRUE, PRINT THIS:
   if (loaded) {
     return (
-      <div>
+      <div className="container-flow m-5 mt-5">
         <Greeter phrase="What's up," name="Jake?" />
-        <Greeter phrase="Oh shiiiii, ahahaha, YO wtf... is up" name="Reagan!" />
+        <Greeter phrase="oh shiiiii, ahahaha, YO wtf... is up" name="reagan!" />
         <Greeter phrase="That's sick," name="Jake!" />
+        <Greeter phrase="yeah...man, ahaa. u wanna log in," name="reagan?" />
+        <Greeter phrase="Sure! Nothing is gonna happen, right?" name="Jake..." />
+        <Greeter phrase="nahhhhh" />
+
+
         <input
           placeholder="Login Username"
           value={username}
           onChange={(e) => handleUsername(e.target.value)}
         ></input>
-        <p>You are logging in as: {username}</p>
+        <p className='mt-3'>You are logging in as: {username}</p>
       </div>
     );
     //IF FALSE, PRINT THIS:
   } else {
     return (
-      <>
+      <div className="container">
         <h1>Website Loading...</h1>
-        <button onClick={handleLoad}>Please..... Login..I'm begging you so much to just pls...</button>
-      </>
+        <button className='btn btn-danger btn-lg ' onClick={handleLoad}>Please Login! PLS</button>
+      </div>
     );
   }
 };
