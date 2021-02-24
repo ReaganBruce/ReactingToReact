@@ -10,7 +10,7 @@ const App = () => {
   };
 
   useEffect(() =>{
-      console.log(`Current State is ${loaded}.`)
+      console.log(`Current State is ${loaded}`);
       setTimeout(() => {
         handleLoad(); //After three seconds call handleLoad(), which has setLoaded() === true.
       }, 3000)
@@ -36,7 +36,7 @@ const App = () => {
     return (
       <>
         <h1>Website Loading...</h1>
-        <button onClick={() => handleLoad()}>Please..... Login!</button>
+        <button onClick={handleLoad}>Please..... Login!</button>
       </>
     );
   }
